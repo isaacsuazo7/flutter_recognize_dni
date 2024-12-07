@@ -1,20 +1,22 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_recognize_dni/src/home_screen.dart';
 
 void main() {
-  runApp(const MainApp());
+  runApp(const _App());
 }
 
-class MainApp extends StatelessWidget {
-  const MainApp({super.key});
+class _App extends StatelessWidget {
+  const _App();
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-      home: Scaffold(
-        body: Center(
-          child: Text('Hello World!'),
-        ),
-      ),
+    return MaterialApp(
+      title: 'DNI Recognizer',
+      debugShowCheckedModeBanner: false,
+      initialRoute: '/',
+      routes: {
+        '/': (context) => const HomeScreen(),
+      },
     );
   }
 }
